@@ -91,5 +91,36 @@ public class ReceiptTest {
         assertEquals(expectedTaxCart2, receipt.taxTotal);
     }
 
+    @Test
+    public void checkInput3ForTotal() {
+        Items importedBottleOfPerfume2 = new Items("imported bottle of perfume", 1, 27.99, false, true);
+        Items bottleOfPerfume = new Items ("bottle of perfume", 1, 18.99, false, false);
+        Items headachePills = new Items("headache pills", 1, 9.75, true, false);
+        Items importedBoxOfChocolates2 = new Items("imported box of chocolates", 1, 11.25, true, true);
+
+        Items[] cartInput3 = new Items[]{importedBottleOfPerfume2, bottleOfPerfume, headachePills, importedBoxOfChocolates2};
+
+        Receipt receipt = CreateReceipt.createReceipt(cartInput3);
+        double expectedTotalCart3 = 6.70;
+
+        assertEquals(expectedTotalCart3, receipt.totalToPay);
+    }
+
+
+    @Test
+    public void checkInput3ForTax() {
+        Items importedBottleOfPerfume2 = new Items("imported bottle of perfume", 1, 27.99, false, true);
+        Items bottleOfPerfume = new Items ("bottle of perfume", 1, 18.99, false, false);
+        Items headachePills = new Items("headache pills", 1, 9.75, true, false);
+        Items importedBoxOfChocolates2 = new Items("imported box of chocolates", 1, 11.25, true, true);
+
+        Items[] cartInput3 = new Items[]{importedBottleOfPerfume2, bottleOfPerfume, headachePills, importedBoxOfChocolates2};
+
+        Receipt receipt = CreateReceipt.createReceipt(cartInput3);
+        double expectedTaxCart3 = 75.98;
+
+        assertEquals(expectedTaxCart3, receipt.taxTotal);
+    }
+
 
 }
