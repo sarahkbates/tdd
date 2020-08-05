@@ -7,7 +7,7 @@ public class Items {
     boolean isTaxExempt;
     boolean isImported;
 
-    public Items(String name, int quantity, double price, double tax, boolean isTaxExempt, boolean isImported ){
+    public Items(String name, int quantity, double price, boolean isTaxExempt, boolean isImported ){
         this.name = name;
         this.quantity = quantity;
         this.price = price;
